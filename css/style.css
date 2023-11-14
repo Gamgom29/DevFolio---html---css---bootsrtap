@@ -1,0 +1,312 @@
+:root {
+  --animation-dur: 0.5s;
+  --color-light: #fff;
+  --color-primary: #0078ff;
+}
+body {
+  background-color: #f5f5f5;
+  scroll-behavior: smooth;
+}
+body:has(#home:target) li a[href="#home"]::before,
+body:has(#about:target) li a[href="#about"]::before,
+body:has(#services:target) li a[href="#services"]::before {
+  width: 80%;
+  visibility: visible;
+}
+.section-title h2 {
+  font-size: 48px;
+  font-weight: 700;
+}
+.section-title {
+  position: relative;
+}
+.section-title p {
+  color: #4e4e4e;
+}
+.section-line {
+  width: 40px;
+  height: 4px;
+  background-color: var(--color-primary);
+  margin: auto;
+}
+.nav-bg {
+  background-color: #000000df;
+}
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+nav .navbar-brand {
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+}
+nav .navbar-brand:hover {
+  color: #fff;
+}
+nav .nav-link {
+  color: #fff;
+  font-weight: 600;
+  position: relative;
+  text-transform: uppercase;
+}
+nav .nav-link:focus,
+.nav-link:active,
+.navbar-nav .nav-link.show {
+  color: #fff;
+}
+.navbar ul li a::before {
+  content: "";
+  height: 3px;
+  width: 0;
+  position: absolute;
+  bottom: -1px;
+  left: 8px;
+  background-color: var(--color-light);
+  visibility: hidden;
+  transition: all var(--animation-dur);
+}
+.navbar ul li a:hover::before {
+  width: 80%;
+  visibility: visible;
+}
+nav .nav-link:hover {
+  color: #fff;
+}
+nav .active {
+  color: #fff !important;
+}
+nav .active {
+  color: #fff;
+}
+nav .active:hover {
+  color: #fff;
+}
+nav .nav-icon {
+  color: #fff;
+}
+
+/* end nav */
+/* start home */
+
+#home {
+  background-image: url("../DevFolio images/hero-bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  color: var(--color-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#home .home-layer {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0.9;
+}
+#home .home-content {
+  position: relative;
+  text-align: center;
+  /* bottom: 110px; */
+}
+#home .home-content h1 {
+  font-size: 72px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+#home .home-content span {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+/* end home */
+/* start about */
+#about {
+  padding: 80px 0;
+  background-color: #f5f5f5;
+}
+#about ul {
+  list-style: none;
+}
+#about .about-card {
+  background-color: var(--color-light);
+  padding: 60px 45px;
+  box-shadow: 1px 1px 9px #00000049;
+}
+
+#about .about-card span {
+  font-weight: 600;
+  font-size: 18px;
+}
+#about .about-skills {
+  margin-top: 20px;
+}
+#about .about-skills .progress {
+  height: 12px;
+}
+#about .about-skills span {
+  font-weight: 400;
+  color: #4e4e4e;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+#about .second-p {
+  text-align: left;
+}
+#about .second-p h3 {
+  font-weight: 500;
+  font-size: 32px;
+  position: relative;
+}
+#about .second-p h3::before {
+  content: "";
+  width: 100px;
+  height: 4px;
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  background-color: var(--color-primary);
+}
+#about .second-p p {
+  font-weight: 300;
+  font-size: 20px;
+  color: #4e4e4e;
+}
+/* end about */
+/* Services */
+#services {
+  padding: 80px 0;
+  background-color: #f5f5f5;
+}
+
+#services .serv-card {
+  text-align: center;
+}
+
+#services .serv-card .s-card-b {
+  background-color: var(--color-light);
+}
+#services .card h3 {
+  margin-block: 20px;
+  font-weight: 500;
+  font-size: 22px;
+}
+#services .card p {
+  color: #4e4e4e;
+}
+#services .io-circle {
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 32%;
+  width: 100px;
+  height: 100px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  transition: all var(--animation-dur);
+}
+#services .io-circle .serv-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 40px;
+  background-color: var(--color-light);
+  transition: all var(--animation-dur);
+}
+#services .card:hover .io-circle {
+  background-color: #cde1f8;
+}
+#services .card:hover .serv-icon {
+  color: var(--color-light);
+  background-color: var(--color-primary);
+}
+
+/* ens services */
+/* stats */
+#status {
+  padding: 120px 0;
+  background-image: url("../DevFolio images/counters-bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  color: var(--color-light);
+}
+#status .stat-layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #0078ff;
+  opacity: 0.7;
+}
+#status .container {
+  position: relative;
+}
+#status .io-circle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 0 0 10px #cde1f8;
+  border-radius: 50%;
+  transition: all var(--animation-dur);
+  font-size: 28px;
+  padding-top: 8px;
+  text-align: center;
+  line-height: 1.5;
+  margin: 0 auto;
+  display: block;
+}
+#status .stat-content span {
+  font-size: 32px;
+}
+/* end stats */
+/* work  */
+
+#work {
+  padding: 80px 0;
+}
+#work a {
+  text-decoration: none;
+  cursor: default;
+  color: #0078ff;
+}
+#work a:hover {
+  color: #0078ff;
+}
+#work .work-ico {
+  font-size: 50px;
+  color: var(--color-primary);
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+}
+#work img {
+  transition: scale var(--animation-dur);
+}
+#work .image {
+  overflow: hidden;
+}
+#work .card {
+  overflow: hidden;
+}
+#work .card p {
+  font-weight: 500;
+  font-size: 20px;
+}
+#work .card:hover img {
+  scale: 1.2;
+}
+/* end work */
